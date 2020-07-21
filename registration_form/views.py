@@ -37,5 +37,5 @@ def registration_form(request):
         )
         user_register.save()
         done = True
-        return render(request, 'registration_form/index.html', {'done': done})
-    return render(request, 'registration_form/index.html')
+        return render(request, 'registration_form/stepper.html', {'done': done})
+    return render(request, 'registration_form/stepper.html')
