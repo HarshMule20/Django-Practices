@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <title>Register</title>
+  <style>
+    * {
+        {#margin: auto;#}
+      margin: 0;
+      padding: 0;
+      outline: none;
+      font-family: Chalkboard;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      text-align: left;
+      {#font-weight: 500;#}
+    }
+    .container .outer_form {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .outer_form form {
+      display: flex;
+      width: 300%;
+    }
+      .outer_form form .one_page {
+          width: 33.33%;
+      }
+      .form-group {
+          width: 70%;
+      }
+      .outer_form form .one_page .form-group {
+          height: 45px;
+          {#width: 200px;#}
+          margin: 45px 0;
+          {#display: flex;#}
+          position: relative;
+      }
+      .outer_form form .one_page .form-group label {
+          {#position: absolute;#}
+          font-weight: 500;
+          font-size: 19px;
+      }
+      .outer_form form .one_page .form-group input {
+          height: 100%;
+          width: 100%;
+          border: 1px solid lightgrey;
+          border-radius: 20px;
+          padding-left: 15px;
+          font-size: 20px;
+      }
+      .outer_form form .one_page .form-group button {
+          width: 100%;
+          height: 50px;
+          margin-top: 8px;
+          border: none;
+          background: darkslategrey;
+          color: white;
+          font-size: 20px;
+          text-transform: uppercase;
+          border-radius: 20px;
+          cursor: pointer;
+          transition: 1s ease;
+      }
+      .outer_form form .one_page .form-group button:hover {
+          background: green;
+      }
+      .outer_form form .one_page .btn button {
+
+      }
+      form .one_page .btn .prev {
+          margin-right: 3px;
+          font-size: 17px;
+      }
+      form .one_page .btn .next {
+          margin-right: 3px;
+          font-size: 17px;
+      }
+  </style>
+</head>
+
+<body>
+  {% load static %}
+  <div class="alert"></div>
+  <div class="container">
+    <h1 style="font-size: 3rem">Registration Form</h1>
+      <div class="outer_form">
+    <form action="/manage/register/" method="post"> {% csrf_token %}
+      {#      <form style="margin-top: 30px">#}
+        <div class="one_page">
+      <div class="form-group">
+        <label for="exampleFormControlInput1" class="label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1" class="label">Surname</label>
+        <input type="text" class="form-control" id="surname" name="surname" placeholder="Enter Your surname">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1" class="label">Photo</label>
+        <input type="text" class="form-control" id="profile_photo" name="profile_photo" placeholder="Enter URL">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1" class="label">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+      </div>
+      <div class="form-group btn">
+        <button>Next</button>
+      </div>
+        </div>
+        <div class="one_page">
+      <div class="form-group">
+        <label for="exampleFormControlSelect1" class="label">Gender</label>
+        <select class="form-control" id="gender" name="gender">
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1" class="label">Phone No.</label>
+        <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+      </div>
+            <div class="form-group">
+        <label for="exampleFormControlInput1" class="label">Telephone No.</label>
+        <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter your telephone number">
+      </div>
+            <div class="form-group">
+        <label for="exampleFormControlInput1" class="label">Blood Group</label>
+        <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter your blood group">
+      </div>
+{#      <div class="form-group">#}
+{#        <label for="exampleFormControlTextarea1" class="label">Address Line 1</label>#}
+{#        <textarea class="form-control" id="address_1" name="address_1" rows="4"></textarea>#}
+{#      </div>#}
+{#      <div class="form-group">#}
+{#        <label for="exampleFormControlTextarea1" class="label">Address Line 2</label>#}
+{#        <textarea class="form-control" id="address_2" name="address_2" rows="3"></textarea>#}
+{#      </div>#}
+      <div class="form-group btn">
+        <button class="prev-1 prev">Previous</button>
+        <button class="next-1 next">Next</button>
+      </div>
+        </div>
+        <div class="one_page">
+      <div class="form-group">
+        <label for="exampleFormControlInput1" class="label">Date of Birth</label>
+        <input type="date" class="form-control" id="dob" name="dob" placeholder="select">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1" class="label">City</label>
+        <input type="text" class="form-control" id="city" name="city" placeholder="Enter your City">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1" class="label">State</label>
+        <input type="text" class="form-control" id="state" name="state" placeholder="Enter your State">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1" class="label">Pin-code</label>
+        <input type="number" class="form-control" id="pin_code" name="pin_code" placeholder="Enter the pin-code">
+      </div>
+      {#        <button type="submit" class="btn btn-primary" id="submit_btn" name="submit_btn" style="margin-bottom: 30px">Submit</button>#}
+      <div class="form-group btn">
+        <button class="prev-2 prev">Previous</button>
+        <button type="submit" class="submit">Submit</button>
+      </div>
+        </div>
+    </form>
+      </div>
+  </div>
+  <script>
+    {% if done %}
+    alert("You have registered successfully");
+    localStorage.clear();
+    document.location = "/manage/register";
+    {% endif %}
+
+  </script>
+  {#    <img src="{% static "registration_form/home.png" %}" style='height: 300px' alt="">#}
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
