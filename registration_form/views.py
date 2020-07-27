@@ -6,7 +6,7 @@ from registration_form.models import Register
 
 def registration_form(request):
     # return HttpResponse("<h1> Hello world </h1>")
-    # return render(request, 'registration_form/index.html')
+    # return render(request, 'registration_form/register.html')
     if request.method == 'POST':
         print("in registration")
         name = request.POST.get('name', '')
@@ -37,5 +37,5 @@ def registration_form(request):
         )
         user_register.save()
         done = True
-        return render(request, 'registration_form/stepper.html', {'done': done})
-    return render(request, 'registration_form/stepper.html')
+        return render(request, 'registration_form/new_registration.html', {'done': done})
+    return render(request, 'registration_form/new_registration.html')
